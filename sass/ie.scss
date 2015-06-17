@@ -1,5 +1,18 @@
-/* Welcome to Compass. Use this file to write IE specific override styles.
- * Import this file using the following HTML or equivalent:
- * <!--[if IE]>
- *   <link href="/stylesheets/ie.css" media="screen, projection" rel="stylesheet" type="text/css" />
- * <![endif]--> */
+.ie10 section#safety .safety-tag, .ie11 section#safety .safety-tag
+{
+	margin: 30px auto !important;
+}
+
+.ie10 section#safety .safety-text, .ie11 section#safety .safety-text {
+	padding: 0px 5% !important;
+}
+
+.ie10 section#safety .safety-text p, .ie11 section#safety .safety-text p {
+	margin: 0px !important;
+}
+
+@media screen and (min-width:775px) and (max-width:1000px) {
+	.ie10 section#safety .safety-info, .ie11 section#safety .safety-info {
+		width: 29% !important;
+	}
+}

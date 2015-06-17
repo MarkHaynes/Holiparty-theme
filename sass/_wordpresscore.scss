@@ -1,0 +1,128 @@
+/* ==========================================================================
+   Wordpress Core Styling
+   ========================================================================== */
+
+.alignnone {
+    margin: 20px 20px 20px 0;
+
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+.aligncenter,
+div.aligncenter {
+    display: block;
+    margin: 20px auto 20px auto;
+}
+
+.alignright {
+    margin: 20px 0 20px 20px;
+
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+.alignleft {
+    margin: 20px 20px 20px 0;
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+.aligncenter {
+    display: block;
+    margin: 20px auto 20px auto;
+}
+
+a img.alignright {
+    margin: 20px 0 20px 20px;
+
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+a img.alignnone {
+    margin: 20px 20px 20px 0;
+
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+a img.alignleft {
+    margin: 20px 20px 20px 0;
+
+    @media screen and (max-width: 600px) {
+        margin: 15px auto 15px auto !important;
+        display: block; 
+    }
+}
+
+a img.aligncenter {
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+}
+
+@media screen and (min-width: 600px) {
+
+    .alignright {
+        float: right;   
+    }
+
+    .alignleft {
+        float: left;
+    }
+
+    a img.alignright {
+        float: right;    
+    }
+
+    a img.alignleft {
+        float: left;
+    }
+}
+
+.wp-caption {
+    background: #fff;
+    border: 1px solid #f0f0f0;
+    max-width: 96%; /* Image does not overflow the content area */
+    padding: 5px 3px 10px;
+    text-align: center;
+}
+
+.wp-caption.alignnone {
+    margin: 20px 20px 20px 0;
+}
+
+.wp-caption.alignleft {
+    margin: 20px 20px 20px 0;
+}
+
+.wp-caption.alignright {
+    margin: 20px 0 20px 20px;
+}
+
+.wp-caption img {
+    border: 0 none;
+    height: auto;
+    margin: 0;
+    max-width: 98.5%;
+    padding: 0;
+    width: auto;
+}
+
+.wp-caption p.wp-caption-text {
+    font-size: 16px;
+    line-height: 20px;
+    margin: 0;
+    padding: 8px 8px 8px;
+}

@@ -1,0 +1,87 @@
+section#promo-bar {
+	background-color: $colour-pink;
+	min-height: 80px;
+	text-align: center;
+	width: 100%;
+
+	@media screen and (max-width:500px) {
+			display: none;
+		}
+
+	.inner-wrapper{
+		display: table;
+	}
+
+	.promo-cell, .promo-info-wide, .promo-image {
+		display: table-cell;
+		height: 100px;
+		vertical-align: middle;
+
+		@media screen and (max-width:500px) {
+			height: 50px;
+		}
+
+		img {
+			width: 50px;
+			display: table-cell;
+
+			@media screen and (max-width:500px) {
+				height: 40px;
+				margin-top: 5px;
+				width: 40px;
+			}		
+		}
+
+		span {
+			color: #fff;
+			display: table-cell;
+			font-size: 16px;
+			font-size: 1.6rem;
+			font-weight: bold;
+			margin: 0px;
+			padding: 0 10px;
+			text-align: left;
+
+			@media screen and (min-width: 501px) and (max-width: 1170px) {
+				font-size: 14px;
+				font-size: 1.4rem;
+			}
+
+			@media screen and (max-width:500px) {
+				font-size: 18px;
+				font-size: 1.8rem;
+				line-height: 50px;
+			}
+			
+		}
+	}
+
+	.promo-image {
+		@media screen and (max-width:500px) {
+			float: left;
+			width: 10%;
+			
+		}
+	}
+
+	.promo-cell {
+		@media screen and (max-width:500px) {
+			float: left;
+			line-height: 30px;
+			width: 90%;
+		}
+	}
+
+	.promo-info-wide {
+		width: 40%;
+
+		@media screen and (max-width:850px) {
+			display: none;
+		}
+
+		p {
+			width: 100% !important;
+		}
+	}
+
+}

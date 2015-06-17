@@ -1,0 +1,98 @@
+.contact-left {
+	display: inline-block;
+	font-size: 18px;
+	font-size: 1.8rem;
+	vertical-align: top;
+	width: 60%;
+
+	@media screen and (max-width:775px) {
+		width: 100%;
+	}
+
+	form {
+		input {
+			margin: 0 auto;
+			padding: 15px 5%;
+			width: 90%;
+		}
+
+		input[type="submit"] {
+			background-color: $colour-green;
+			border: 0px;
+			color: #fff;
+			display: block;
+			margin: 0 auto 20px auto;
+			padding: 15px 0;
+			width: 100%;
+			max-width: 250px;
+		}
+		input[type="submit"]:hover {
+			background-color: darken($colour-green, 10%);
+		}
+
+		label {
+			display: block;
+			margin: 0px 0;
+			max-width: 600px;
+
+			@media screen and (max-width:775px) {
+				margin: 0px auto;
+			}
+		}
+
+		textarea {
+			min-height: 150px;
+			padding: 15px 5%;
+			width: 90%;
+
+		}
+
+		@media screen and (max-width:775px) {
+
+			input {
+				padding: 10px 5%;
+			}
+
+			input[type="submit"] {
+				padding: 10px 0px;
+				width: 100%;
+			}
+
+			textarea {
+				padding: 10px 5%;
+				width: 90%;
+			}
+		}
+	}
+}
+
+.contact-right {
+	background-color: $colour-green;
+	color: #fff;
+	display: inline-block;
+	padding-top: 20px;
+	vertical-align: top;
+	width: 30%;
+	text-align: center;
+
+	-webkit-box-shadow: 7px 7px 5px -2px rgba(0,0,0,0.11);
+	-moz-box-shadow: 7px 7px 5px -2px rgba(0,0,0,0.11);
+	box-shadow: 7px 7px 5px -2px rgba(0,0,0,0.11);
+
+
+	ul {
+		list-style-type: none;
+		margin: 0px;
+		padding: 0px;
+		a:link {
+			color: #fff !important;
+			text-decoration: underline;
+		}
+	}
+
+	
+
+	@media screen and (max-width:775px) {
+		width: 100%;
+	}
+}

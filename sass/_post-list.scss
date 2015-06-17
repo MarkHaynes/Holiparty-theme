@@ -1,0 +1,43 @@
+article.article-list {
+	display:inline-block;
+	width: 40%;
+	padding: 20px 5%;
+
+	@media screen and (max-width: 775px) {
+		width: 90%;
+	}
+
+	img {
+		width: 100%;
+	}
+
+	a {
+		color: #fff;
+		text-decoration: none;
+		text-indent: 10px;
+	}
+
+	h1 {
+		background-color: $colour-orange;
+		margin: 0px;
+		padding: 5px 0;
+	}
+}
+
+h1.category-title {
+	color: $colour-orange;
+	font-size: 50px;
+	font-size: 5rem;
+	text-align: center;
+}
+
+.category-description {
+	color: #333333;
+	font-family: 'Open Sans';
+	font-size: 18px;
+	font-size: 1.8rem;
+	margin: 0 auto;
+	text-align: center;
+	width: 100%;
+	max-width: 500px;
+}

@@ -1,0 +1,160 @@
+nav#main {
+	float: right;
+	font-family: 'Quicksand', sans-serif;
+	margin: 0 auto;	
+
+	@media screen and (max-width: 780px) {
+		display: none;
+	}
+
+	ul.menu-header {
+		height: 60px;
+		list-style: none;
+		margin: 0px auto;
+		text-align: right;
+
+		li a:hover {
+			transition: background-color 0.5s ease;
+			text-decoration: none;
+		}
+		li.nav-red {
+			background-color: $colour-red;
+			:hover {
+				background-color: darken($colour-red, 10%);
+			}
+		}
+		li.nav-pink {
+			background-color: $colour-pink;
+			:hover {
+				background-color: darken($colour-pink, 10%);
+			}
+		}
+		li.nav-purple {
+			background-color: $colour-purple;
+			:hover {
+				background-color: darken($colour-purple, 10%);
+			}
+		}
+		li.nav-orange {
+			background-color: $colour-orange;
+			:hover {
+				background-color: darken($colour-orange, 10%);
+			}
+		}
+		li.nav-green {
+			background-color: $colour-green;
+			:hover {
+				background-color: darken($colour-green, 10%);
+			}
+		}
+		li.nav-blue {
+			background-color: $colour-blue;
+			:hover {
+				background-color: darken($colour-blue, 10%);
+			}
+		}
+
+
+		li {
+			display: inline-block;
+			margin-right: 15px;
+
+			@media screen and (max-width: 1000px) {
+				margin-right: 5px;
+			}
+		}
+
+		li.menu-item-paypal {
+			
+
+		}
+
+		.lt-ie8 li {
+			*display: inline;
+			zoom: 1;
+		}
+
+		li a {
+			color: #fff;
+			display: block;
+			font-size: 16px;
+			font-size: 1.6rem;
+			font-weight: bold;
+			line-height: 50px;
+			padding: 0px 20px;
+			text-decoration: none;
+			text-transform: uppercase;
+
+			@media screen and (max-width: 1000px) {
+				padding: 0px 10px;
+			}
+		}
+	}
+
+	ul.menu-header li:hover > a {
+		background-color: #000;
+	}
+
+	ul.menu-header li:hover > ul {
+	    display: block;
+	}
+
+	ul.menu-header .sub-menu {
+	    display: none;
+	    position: absolute;
+	    z-index: 99999;
+	    padding: 0;
+	    margin: 0;
+	}
+
+	ul.menu-header .sub-menu li { 
+		border-bottom: 1px solid #fff;
+		background-color: #000;
+	    display: block;
+	    text-align: center;
+	    width: 300px;
+	}
+
+	ul.menu-header .sub-menu li a:link{
+		display: block;
+		font-size: 2.5rem;
+		font-size: 25px;
+	    line-height: 50px;
+	    
+	}
+
+	.current-page-parent , .current-page-item , .current_page_item, .current-menu-item, .current-menu-parent {
+		
+	}
+
+	ul.fixed-sub-menu {
+		background: #fff;
+		margin: 0px auto;
+		width: 100%;
+		min-height: 30px;
+		list-style: none;
+		margin: 0;
+		padding: 0;
+		text-align: center;
+
+		li {
+			display: inline-block;
+			text-align: left;
+
+			a:link, a:visited {
+				color: #fff;
+				
+				font-weight: 400 !important;
+				text-shadow: 0 0 5px rgba(0,0,0,0.4);
+				padding: 0px 10px;
+				line-height: 30px;
+				display: block;
+			}	
+		}
+
+		li:hover {
+			background-color: #000;
+		}
+
+	}
+}
