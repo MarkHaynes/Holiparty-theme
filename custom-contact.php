@@ -72,7 +72,6 @@ get_header();
 					$email_message .= "<br>";
 					$email_message .= "Enquiry Complete!";			
 
-
 	 				$message = $email_message;
 				    $to = "enquiries@holiparty.co.uk"; 
 				    $from = "enquiries@holiparty.co.uk"; 
@@ -83,9 +82,6 @@ get_header();
 					$headers .= "MIME-Version: 1.0\r\n";
 					$headers .= "Content-Type: text/html; charset=ISO-8859-1\r\n";
 
-
-
-
 				   // now we just send the message
 				   if (@mail($to, $subject, $message, $headers)){
 				   	$completed =  true;
@@ -94,7 +90,6 @@ get_header();
 				   else{
 				      $error = "Sorry there has been a problem sending your message. Please email us directly at enquiries@holiparty.co.uk";
 				   }
-
 	 			}
 	 			else {
 					$error =  "There has been a problem sending your message. Please email us directly at enquiries@holiparty.co.uk";
@@ -232,7 +227,7 @@ get_header();
 				   		<ul>
 				   			<li> <strong>Email: <br></strong> <email><a href="mailto:enquiries@holiparty.co.uk">enquiries@holiparty.co.uk</a></email><br></li><br>
 				   			<li> <strong>Telephone: <br> </strong> 01782 704436 or 0796 161 8368<br><br></li>
-				   			<li> <strong>Head Office Address: <br> </strong> 14 Davey Close <br> Staffordshire <br> ST5 0GR  <br> United Kingdom<br><br></li>
+				   			<li> <strong>Head Office Address: <br> </strong> 14 Davey Close <br> Staffordshire <br> ST5 0GR <br> United Kingdom<br><br></li>
 				   		</ul>
 					</div>
 				</article>

@@ -1,4 +1,8 @@
-<?php get_header(); ?>
+<?php 
+/*
+Template Name: Custom Events Page
+*/
+get_header(); ?>
 <div class="wrapper">
 <main id="main-content">
 	<section id="promo-bar">

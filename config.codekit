@@ -195,24 +195,24 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/promo\/BagIcon.png": {
+	"\/images\/promo\/bagicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1080,
-		"inputAbbreviatedPath": "\/images\/promo\/BagIcon.png",
-		"outputAbbreviatedPath": "\/images\/promo\/BagIcon.png",
+		"inputAbbreviatedPath": "\/images\/promo\/bagicon.png",
+		"outputAbbreviatedPath": "\/images\/promo\/bagicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/promo\/BundleIcon.png": {
+	"\/images\/promo\/bundleicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1259,
-		"inputAbbreviatedPath": "\/images\/promo\/BundleIcon.png",
-		"outputAbbreviatedPath": "\/images\/promo\/BundleIcon.png",
+		"inputAbbreviatedPath": "\/images\/promo\/bundleicon.png",
+		"outputAbbreviatedPath": "\/images\/promo\/bundleicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -228,35 +228,35 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/NoneToxicIcon.png": {
+	"\/images\/safety\/nonetoxicIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2302,
-		"inputAbbreviatedPath": "\/images\/safety\/NoneToxicIcon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/NoneToxicIcon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/nonetoxicIcon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/nonetoxicIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/SafeIcon.png": {
+	"\/images\/safety\/safeicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1610,
-		"inputAbbreviatedPath": "\/images\/safety\/SafeIcon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/SafeIcon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/safeicon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/safeicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/WashableIcon.png": {
+	"\/images\/safety\/washableicon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2246,
-		"inputAbbreviatedPath": "\/images\/safety\/WashableIcon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/WashableIcon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/washableicon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/washableicon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0

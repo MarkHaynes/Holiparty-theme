@@ -114,10 +114,7 @@
 
 		                 <a class="event-title" href="<?php echo get_permalink(); ?>" title="<?php echo get_the_title(); ?>"><?php the_title();?></a>
 		            </div>
-
-		             
-
-					
+	
 					<?php endwhile;?> <a class="more-events" href="category/events/" title="See more events">See More...</a>
 					<?php else: ?>
 				     
