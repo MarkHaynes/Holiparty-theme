@@ -24,7 +24,7 @@ get_header( 'shop' ); ?>
 		 */
 		do_action( 'woocommerce_before_main_content' );
 	?>
-		<h1> Hello World</h1>
+
 		<?php while ( have_posts() ) : the_post(); ?>
 
 			<?php wc_get_template_part( 'content', 'single-product' ); ?>

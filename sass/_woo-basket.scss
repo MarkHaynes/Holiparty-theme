@@ -1,0 +1,194 @@
+/*--------------------------------------------
+BASKET PAGE
+----------------------------------------------*/
+body.woocommerce-cart h1.top-heading {
+	color: $colour-pink !important;
+}
+
+.woocommerce table.shop_table {
+	border: 0px;
+}
+
+.woocommerce table.shop_table tr, .woocommerce table.shop_table th, .woocommerce table.shop_table td {
+	border: 1px solid #DDD;
+}
+
+.woocommerce table.shop_table th {
+	font-family: 'Quicksand';
+	font-size: 25px;
+	font-size: 2.5rem;
+}
+
+.woocommerce table.shop_table td {
+}
+
+.woocommerce table.shop_table th.product-name {
+	width: 100%;
+}
+
+.woocommerce table.shop_table tr.cart_item {
+	background-color: #EAEAEA;
+}
+
+.woocommerce a.remove {
+	color: $colour-pink !important;
+	font-size: 4px;
+	font-size: 4rem;
+}
+
+.woocommerce table.shop_table td.product-name a {
+	color: $colour-pink;
+}
+
+.woocommerce a.remove:hover {
+	background-color: $colour-pink !important;
+	color: #fff;
+	text-decoration: none;
+}
+
+.coupon {
+	width: 100%;
+	max-width: 470px;
+}
+
+.woocommerce-page table.cart td.actions .input-text+.button {
+	@media screen and (max-width: 776px) {
+		float: left;
+		margin: 10px 0 0 0;
+	}
+}
+
+input#coupon_code {
+	width: 100%;
+	max-width: 300px;
+}
+
+body.woocommerce-cart input.button {
+	color: #fff;
+	background-color: $colour-pink;
+
+	@media screen and (max-width: 360px) {
+		font-size: 16px !important;
+		font-size: 1.6rem !important;
+	}
+}
+
+body.woocommerce-cart input.button:hover {
+	color: #fff;
+	background-color: darken($colour-pink,10%);
+}
+
+.cart_totals h2 {
+	color: $colour-pink !important;
+	font-size: 40px !important;
+	font-size: 4rem !important;
+}
+
+.cart_totals {
+	table {
+		border: 1px solid #DDDDDD;
+		width: 100%;
+		tbody {
+			display: block;
+			width: 100%;
+
+			tr {
+				border: 0px;
+				width: 100%;
+			}
+
+			th {
+				background-color: #EAEAEA;
+				border: 0px;
+				padding: 0 10px;
+				width: 30%;
+			}
+
+			td {
+				border: 0px !important;
+				font-size: 22px;
+				font-size: 2.2rem;
+				width: 100%;
+			}
+		}
+	}
+}
+
+
+
+.woocommerce-cart .cart-collaterals .cart_totals table td, .woocommerce-cart .cart-collaterals .cart_totals table th {
+	padding: 0 10px;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	text-transform: uppercase;
+	padding: 15px 5%;
+	width: 90%;
+
+	@media screen and (min-width: 400px) {
+		font-size: 25px;
+		font-size: 2.5rem;
+	}
+
+	@media screen and (max-width: 400px) {
+		font-size: 16px !important;
+		font-size: 1.6rem !important;
+	}
+}
+
+@media screen and (max-width: 550px)  {
+
+	.woocommerce-page table.cart td.actions input {
+		width: 100% !important; 
+
+		
+	}
+
+
+
+	/* Force table to not be like tables anymore */
+	.woocommerce table.shop_table, .woocommerce table.shop_table thead, .woocommerce table.shop_table tbody, .woocommerce table.shop_table th, .woocommerce table.shop_table td, .woocommerce table.shop_table tr { 
+		display: block; 
+	}
+	
+	/* Hide table headers (but not display: none;, for accessibility) */
+	.woocommerce table.shop_table thead tr { 
+		position: absolute;
+		top: -9999px;
+		left: -9999px;
+	}
+	
+	.woocommerce table.shop_table tr { 
+		background-color: #fff;
+
+	}
+	
+	.woocommerce table.shop_table td { 
+		/* Behave  like a "row" */
+		background-color: #fff;
+		border: none;
+		border-bottom: 1px solid #ddd; 
+		position: relative;
+		padding-left: 50%; 
+	}
+	
+	.woocommerce table.shop_table td:before { 
+		/* Now like a table header */
+		position: absolute;
+		/* Top/left values mimic padding */
+		top: 6px;
+		left: 6px;
+		width: 45%; 
+		padding-right: 10px; 
+		white-space: nowrap;
+	}
+
+	.woocommerce table.shop_table td:nth-of-type(1):before { content: "Remove Product:"; text-align: right;}
+	.woocommerce table.shop_table td:nth-of-type(3):before { content: "Product Name:"; text-align: right;}
+	.woocommerce table.shop_table td:nth-of-type(4):before { content: "Price:"; text-align: right;}
+	.woocommerce table.shop_table td:nth-of-type(5):before { content: "Quantity:"; text-align: right;}
+	.woocommerce table.shop_table td:nth-of-type(6):before { content: "Total:"; text-align: right;}
+	td.actions::before {
+		content: "" !important;
+	}
+}

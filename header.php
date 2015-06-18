@@ -24,6 +24,8 @@ if (UA.indexOf("IEMobile") === -1) {
 	<?php wp_head(); ?>
 </head>
 
+<body <?php body_class(); ?>>
+
 <nav id="mobile" role="navigation">
     <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'menu_class' => 'menu-mobile' ) ); ?>
 </nav>

@@ -162,6 +162,28 @@
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0
 		},
+	"\/images\/basket-large.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 4765,
+		"inputAbbreviatedPath": "\/images\/basket-large.png",
+		"outputAbbreviatedPath": "\/images\/basket-large.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
+	"\/images\/basket.png": {
+		"fileType": 32768,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"initialSize": 1434,
+		"inputAbbreviatedPath": "\/images\/basket.png",
+		"outputAbbreviatedPath": "\/images\/basket.png",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"processed": 0
+		},
 	"\/images\/footer\/logo.png": {
 		"fileType": 32768,
 		"ignore": 0,
@@ -195,68 +217,68 @@
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/promo\/bagicon.png": {
+	"\/images\/promo\/BagIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1080,
-		"inputAbbreviatedPath": "\/images\/promo\/bagicon.png",
-		"outputAbbreviatedPath": "\/images\/promo\/bagicon.png",
+		"inputAbbreviatedPath": "\/images\/promo\/BagIcon.png",
+		"outputAbbreviatedPath": "\/images\/promo\/BagIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/promo\/bundleicon.png": {
+	"\/images\/promo\/BundleIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1259,
-		"inputAbbreviatedPath": "\/images\/promo\/bundleicon.png",
-		"outputAbbreviatedPath": "\/images\/promo\/bundleicon.png",
+		"inputAbbreviatedPath": "\/images\/promo\/BundleIcon.png",
+		"outputAbbreviatedPath": "\/images\/promo\/BundleIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/promo\/largebundleicon.png": {
+	"\/images\/promo\/LargeBundleIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 3766,
-		"inputAbbreviatedPath": "\/images\/promo\/largebundleicon.png",
-		"outputAbbreviatedPath": "\/images\/promo\/largebundleicon.png",
+		"inputAbbreviatedPath": "\/images\/promo\/LargeBundleIcon.png",
+		"outputAbbreviatedPath": "\/images\/promo\/LargeBundleIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/nonetoxicIcon.png": {
+	"\/images\/safety\/NoneToxicIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2302,
-		"inputAbbreviatedPath": "\/images\/safety\/nonetoxicIcon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/nonetoxicIcon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/NoneToxicIcon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/NoneToxicIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/safeicon.png": {
+	"\/images\/safety\/SafeIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 1610,
-		"inputAbbreviatedPath": "\/images\/safety\/safeicon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/safeicon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/SafeIcon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/SafeIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
 		},
-	"\/images\/safety\/washableicon.png": {
+	"\/images\/safety\/WashableIcon.png": {
 		"fileType": 32768,
 		"ignore": 0,
 		"ignoreWasSetByUser": 0,
 		"initialSize": 2246,
-		"inputAbbreviatedPath": "\/images\/safety\/washableicon.png",
-		"outputAbbreviatedPath": "\/images\/safety\/washableicon.png",
+		"inputAbbreviatedPath": "\/images\/safety\/WashableIcon.png",
+		"outputAbbreviatedPath": "\/images\/safety\/WashableIcon.png",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0,
 		"processed": 0
@@ -4056,6 +4078,38 @@
 		"shouldRunBless": 0,
 		"useLibsass": 0
 		},
+	"\/sass\/_woo-basket.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 1,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_woo-basket.scss",
+		"outputAbbreviatedPath": "\/css\/_woo-basket.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
+	"\/sass\/_woocommerce.scss": {
+		"createSourceMap": 0,
+		"debugStyle": 1,
+		"decimalPrecision": 10,
+		"fileType": 4,
+		"ignore": 1,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/sass\/_woocommerce.scss",
+		"outputAbbreviatedPath": "\/css\/_woocommerce.css",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0,
+		"outputStyle": 0,
+		"shouldRunAutoprefixer": 0,
+		"shouldRunBless": 0,
+		"useLibsass": 0
+		},
 	"\/sass\/_wordpresscore.scss": {
 		"createSourceMap": 0,
 		"debugStyle": 1,
@@ -4192,6 +4246,15 @@
 		"ignore": 1,
 		"ignoreWasSetByUser": 0,
 		"inputAbbreviatedPath": "\/style.css",
+		"outputAbbreviatedPath": "No Output Path",
+		"outputPathIsOutsideProject": 0,
+		"outputPathIsSetByUser": 0
+		},
+	"\/woocommerce.php": {
+		"fileType": 8192,
+		"ignore": 0,
+		"ignoreWasSetByUser": 0,
+		"inputAbbreviatedPath": "\/woocommerce.php",
 		"outputAbbreviatedPath": "No Output Path",
 		"outputPathIsOutsideProject": 0,
 		"outputPathIsSetByUser": 0

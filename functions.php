@@ -1,12 +1,37 @@
 <?php
 
+//Woo
+
+//remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
+//remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
+
+add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
+add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
+
+function my_theme_wrapper_start() {
+  echo '<section id="main"><div class="content-wrap">
+    <section class="content">
+      <div class="inner-wrapper"><article class="page-single">';
+}
+
+function my_theme_wrapper_end() {
+  echo '</article></div></section></div></section>';
+}
+add_action( 'after_setup_theme', 'woocommerce_support' );
+function woocommerce_support() {
+    add_theme_support( 'woocommerce' );
+}
+
+// Woocommerce Order 
+remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
+
+
+
 function custom_styles() {
 
 	wp_register_style( 'style-normalize', get_template_directory_uri() . '/css/normalize.css', false, false, 'all' );
 	wp_enqueue_style( 'style-normalize' );
-
-	wp_register_style( 'style-main', get_stylesheet_uri(), false, false );
-	wp_enqueue_style( 'style-main' );
 
 	wp_register_style( 'style-opensans', 'http://fonts.googleapis.com/css?family=Montserrat|Open+Sans:400,300', false, false );
 	wp_enqueue_style( 'style-opensans' );
@@ -19,7 +44,11 @@ function custom_styles() {
 
   wp_register_script( 'jssporslider', get_template_directory_uri() . '/scripts/jssor.slider.mini.js', array( 'jquery' ) );
   wp_enqueue_script( 'jssporslider' );
+}
 
+add_action( 'wp_enqueue_scripts', 'holi_theme_enqueue_styles', 15 );
+function holi_theme_enqueue_styles() {
+  wp_enqueue_style( 'parent-style', get_template_directory_uri() . '/style.css' );
 }
 
 // Register jQuery if not admin.
@@ -54,6 +83,74 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'single-post', 1340, 500, array( 'center', 'center' ) ); 
 }
 
+//Nav basket addition
+function modify_nav_menu_items( $items, $args ) {
+
+  global $woocommerce;
+  // get cart quantity
+  $qty = $woocommerce->cart->get_cart_contents_count();
+
+  // get cart total
+  $total = $woocommerce->cart->get_cart_total();
+
+  // get cart url
+  $cart_url = $woocommerce->cart->get_cart_url();
+
+
+  $cartitems = $woocommerce->cart->get_cart();
+
+
+
+    $templateurl = get_bloginfo('template_url');
+    if ($args->theme_location == 'header-menu') {
+      if($qty>1) {
+        $items .= '
+        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+
+        <ul class="navigation-basket">
+          <div class="nav-basket-image">
+            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
+          </div>
+          <li class="nav-blue-basket">';
+
+          foreach($cartitems as $cartitem => $values) {
+
+                 $_product = $values['data']->post;
+                 $items .= $_product->post_title;
+                 $_amount = $values['quantity'];
+                 $items .= " x" . $_amount;
+                 $items .= "<br>";  
+           } 
+        $items .= '</li>
+          <li class="nav-blue-basket">'.$qty.' products | '.$total.'</li>
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
+          <div style="clear:both"></div>
+        </ul>
+        ';
+      }
+
+      elseif($qty==1){
+        $items .= '
+        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+        <ul class="navigation-basket">
+          <li class="nav-blue-basket"><a href"'. $cart_url .'">1 product | '.$total.'</a></li>
+        </ul>
+        ';
+      }
+      else {
+         $items .= '
+        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+        <ul class="navigation-basket">
+          <li class="nav-blue-basket">0 Products in your basket.</li>
+        </ul>
+        ';
+      }
+    }      
+    return $items;
+}
+
+add_filter( 'wp_nav_menu_items', 'modify_nav_menu_items', 10, 2 );
+
 // Register Menus.
 
 function register_my_menus() {
@@ -66,26 +163,6 @@ function register_my_menus() {
   ); 
 }
 add_action( 'init', 'register_my_menus' );
-
-//Woo
-
-remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
-remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
-
-add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
-add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
-
-function my_theme_wrapper_start() {
-  echo '<section id="main">';
-}
-
-function my_theme_wrapper_end() {
-  echo '</section>';
-}
-add_action( 'after_setup_theme', 'woocommerce_support' );
-function woocommerce_support() {
-    add_theme_support( 'woocommerce' );
-}
 
 //homepage title hack
 

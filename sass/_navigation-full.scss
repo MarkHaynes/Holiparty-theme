@@ -13,6 +13,21 @@ nav#main {
 		margin: 0px auto;
 		text-align: right;
 
+		li.nav-basket {
+			height: 50px;
+			vertical-align: bottom;
+			width: 50px;
+			a {
+				padding: 0px;
+				text-align: center;
+
+				img {
+					width: 23px;
+					vertical-align: middle;
+				}
+			}
+		}
+
 		li a:hover {
 			transition: background-color 0.5s ease;
 			text-decoration: none;
@@ -54,6 +69,13 @@ nav#main {
 			}
 		}
 
+		li.nav-blue-basket {
+			background-color: $colour-blue-basket;
+			:hover {
+				background-color: darken($colour-blue-basket, 10%);
+			}
+		}
+
 
 		li {
 			display: inline-block;
@@ -62,11 +84,6 @@ nav#main {
 			@media screen and (max-width: 1000px) {
 				margin-right: 5px;
 			}
-		}
-
-		li.menu-item-paypal {
-			
-
 		}
 
 		.lt-ie8 li {
@@ -91,12 +108,11 @@ nav#main {
 		}
 	}
 
-	ul.menu-header li:hover > a {
-		background-color: #000;
-	}
-
 	ul.menu-header li:hover > ul {
 	    display: block;
+	    visibility:visible;
+		opacity:1;
+		transition:visibility 0s linear 0.5s,opacity 0.5s linear;
 	}
 
 	ul.menu-header .sub-menu {
@@ -157,4 +173,85 @@ nav#main {
 		}
 
 	}
+
+	li.nav-basket > ul {
+		display: none;
+		visibility:hidden;
+		opacity:0;
+		transition:visibility 0s linear 0.5s,opacity 0.5s linear;
+	}
+
+	ul.navigation-basket {
+		background-color: darken($colour-blue-basket , 10%)!important;
+		margin: 0px 0px 0px -350px;
+		padding: 10px;
+		min-width: 350px;
+		max-width: 500px;
+		display: block;
+		position: relative;
+		z-index: 5;
+
+		-webkit-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+		-moz-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+		box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+
+		:hover {
+				background-color: $colour-blue-basket !important;
+		}
+
+		li {
+			font-family: 'Open Sans';
+			background-color: darken($colour-blue-basket,10%) !important;
+			border-bottom: 1px solid $colour-blue-basket;
+			color: #fff;
+			float: right;
+			font-size: 16px;
+			font-size: 1.6rem;
+			margin: 0px;
+			padding: 10px 5%;
+			width: 50%;
+
+			:hover {
+				background-color: darken($colour-blue-basket,10%)!important;
+			}
+		}
+
+		li.nav-blue-basket:hover {
+			background-color: darken($colour-blue-basket,10%)!important;
+		}
+
+		li.no-underline {
+			font-family: 'Quicksand';
+			border-bottom: 0px !important;
+		}
+
+		.nav-basket-image {
+			float: left;
+			width: 30%;
+
+			:hover {
+				background-color: darken($colour-blue-basket,10%)!important;
+			}
+		}
+
+		img {
+			width: 100%;
+			display: block;
+		}
+		
+		a.view-basket:hover {
+			background-color: $colour-blue-basket !important;
+		}
+
+	}
+
+	ul.navigation-basket:hover {
+		background-color: darken($colour-blue-basket , 10%)!important;
+	}
+
+	ul.menu-header li:hover > a{
+		background-color: darken($colour-blue-basket , 10%)!important;
+	}
+	
+
 }
