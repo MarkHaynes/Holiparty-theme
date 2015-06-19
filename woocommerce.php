@@ -35,7 +35,9 @@
 		
 			<div class="inner-wrapper">
 				<article class="page-single">
-				  <?php woocommerce_content(); ?>
+					<?php woocommerce_breadcrumb(); ?>
+				    <?php woocommerce_content(); ?>
+				    <?php woocommerce_breadcrumb(); ?>
 				</article>
 
 			</div>

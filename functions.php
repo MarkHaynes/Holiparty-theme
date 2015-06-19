@@ -5,6 +5,9 @@
 //remove_action( 'woocommerce_before_main_content', 'woocommerce_output_content_wrapper', 10);
 //remove_action( 'woocommerce_after_main_content', 'woocommerce_output_content_wrapper_end', 10);
 
+//add_filter( 'woocommerce_enqueue_styles', '__return_empty_array' );
+
+
 add_action('woocommerce_before_main_content', 'my_theme_wrapper_start', 10);
 add_action('woocommerce_after_main_content', 'my_theme_wrapper_end', 10);
 
@@ -24,7 +27,7 @@ function woocommerce_support() {
 
 // Woocommerce Order 
 remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 20 );
-add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 7 );
+add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10 );
 
 
 
@@ -118,7 +121,7 @@ function modify_nav_menu_items( $items, $args ) {
                  $_product = $values['data']->post;
                  $items .= $_product->post_title;
                  $_amount = $values['quantity'];
-                 $items .= " x" . $_amount;
+                 $items .= " - x" . $_amount;
                  $items .= "<br>";  
            } 
         $items .= '</li>
@@ -132,20 +135,50 @@ function modify_nav_menu_items( $items, $args ) {
       elseif($qty==1){
         $items .= '
         <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+
         <ul class="navigation-basket">
-          <li class="nav-blue-basket"><a href"'. $cart_url .'">1 product | '.$total.'</a></li>
+          <div class="nav-basket-image">
+            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
+          </div>
+          <li class="nav-blue-basket">';
+
+          foreach($cartitems as $cartitem => $values) {
+
+                 $_product = $values['data']->post;
+                 $items .= $_product->post_title;
+                 $_amount = $values['quantity'];
+                 $items .= " - x" . $_amount;
+                 $items .= "<br>";  
+           } 
+        $items .= '</li>
+          <li class="nav-blue-basket">'.$qty.' product | '.$total.'</li>
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
+          <div style="clear:both"></div>
         </ul>
         ';
       }
       else {
          $items .= '
         <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+
         <ul class="navigation-basket">
-          <li class="nav-blue-basket">0 Products in your basket.</li>
+          <div class="nav-basket-image">
+            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
+          </div>
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/shop/">View our Shop</a></li>
+          <div style="clear:both"></div>
         </ul>
         ';
       }
-    }      
+    }
+    if ($args->theme_location == 'mobile-menu') {
+      $items .= '
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
+        ';
+    }
+
+
+
     return $items;
 }
 

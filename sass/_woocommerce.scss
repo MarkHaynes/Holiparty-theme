@@ -2,9 +2,13 @@
 SINGLE PRODUCT PAGE
 ----------------------------------------------*/
 
+
 //Product Images Wrapper 
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
+	display:inline-block;
+	vertical-align: top;
 	width: 30%;
+
 	@media screen and (max-width: 768px) {
 		width: 100%;
 	}
@@ -12,7 +16,10 @@ SINGLE PRODUCT PAGE
 
 //Product Summery Wrapper 
 .woocommerce #content div.product div.summary, .woocommerce div.product div.summary, .woocommerce-page #content div.product div.summary, .woocommerce-page div.product div.summary {
-	width: 65%;
+	display:inline-block;
+	vertical-align: top;
+	width: 64%;
+	padding: 0 2%;
 
 	@media screen and (max-width: 768px) {
 		width: 100%;
@@ -194,126 +201,3 @@ ol.commentlist {
 /*--------------------------------------------
 PRODUCTS - RELATED
 ----------------------------------------------*/
-body.single-product, body.post-type-archive-product {
-	ul.products li.product  {
-		display: inline-block;
-		margin: 0px;
-		padding: 0px 1%;
-		width: 22.05% !important;
-
-		img {
-			margin: 0px;
-			padding: 0px;
-		}
-
-		a h3 {
-			background-color: #333;
-			color: #fff;
-			margin: 0px;
-			padding: 10px 0;
-			text-align: center;
-		}
-
-		span.price {
-			background-color: #666;
-			border: 0px;
-			color: #fff;
-			display: inline-block;
-			margin: 0px;
-			padding: 10px 0px;
-			text-align: center;
-			width: 100%;
-			min-height: 100%;
-		}
-
-		a.add_to_cart_button {
-			background-color: $colour-pink;
-			border: 0px;
-			border-radius: 0px;
-			color: #fff;
-			display: inline-block;
-			font-size: 16px;
-			font-size: 1.6rem;
-			line-height: 21px;
-			margin: 0px;
-			padding: 10px 0px;
-			text-align: center;
-			width: 100%;
-			min-height: 100%;
-		}
-
-		a.add_to_cart_button:hover {
-			background-color: darken($colour-pink, 10%);
-		}
-	}
-}
-
-/*--------------------------------------------
-PRODUCTS - LIST
-----------------------------------------------*/
-body.post-type-archive-product {
-	ul.products {
-		display: inline-block;
-	}
-	ul.products li.product {
-		display: inline-block;
-		float: none;
-		margin: 20px 0px;
-		padding: 0px 1%;
-		width: 22.05% !important;
-		vertical-align: top;
-
-		h3 {
-			padding: 10px 5% !important;
-			width: 90%;
-		}
-
-		@media screen and (min-width: 900px) and (max-width: 1200px) {
-			padding: 0px 1%;
-			width: 30% !important;
-		}
-
-		@media screen and (min-width:600px) and (max-width: 900px) {
-			padding: 0px 1%;
-			width: 47% !important;
-		}
-		
-		@media screen and (max-width:600px) {
-			display: block !important;
-			width: 100% !important;
-			margin: 20px auto;
-			padding: 0px;
-		}
-
-
-		a img {
-			margin: 0px 0px 0px 0px !important;
-		}
-
-		.star-rating {
-			background-color: #333;
-			display: none;
-			margin: 0px;
-			padding: 10px 0px;
-			width: 100%;
-		}
-
-		.star-rating:before {
-			width: 100%;
-			margin: 0 auto;
-		}
-	}
-
-	ul.products li.product a img {
-		margin: 0px !important;
-	}
-	
-	h1.page-title {
-		color: $colour-pink;
-		}
-	
-
-	.woocommerce-result-count {
-		display:none;
-	}
-}

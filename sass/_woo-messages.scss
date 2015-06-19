@@ -1,0 +1,30 @@
+/*-------------------------------------
+INFO MESSAGES - like add to basket message etc.
+--------------------------------------*/
+
+
+.woocommerce .woocommerce-message:before {
+	color: $colour-pink;
+}
+
+.woocommerce .woocommerce-info:before {
+	color: $colour-pink;
+}
+
+
+.woocommerce .woocommerce-message {
+	border-top-color: $colour-pink;
+}
+
+.woocommerce .woocommerce-error, .woocommerce .woocommerce-info, .woocommerce .woocommerce-message {
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 1em 2em 1em 3.5em!important;
+	margin: 0 0 2em!important;
+	position: relative;
+	background-color: #f7f6f7;
+	color: #515151;
+	border-top: 3px solid $colour-pink;
+	list-style: none!important;
+	width: auto;
+}

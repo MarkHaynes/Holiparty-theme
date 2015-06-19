@@ -35,7 +35,11 @@ if (UA.indexOf("IEMobile") === -1) {
 		<a href="http://holiparty.co.uk" title="HoliParty">
 			<img class="header-holi-logo" src="<?php bloginfo('template_url'); ?>/images/logo/holi-logo-header.png" alt="Holi Party Logo">
 		</a>
+
 		<a href="#" id="mobile-button" title="Mobile Menu">Menu</a>
+
+        <a id="mobile-basket" href="/basket/"><img src="<?php bloginfo('template_url'); ?>/images/basket.png"></a>
+
 		<nav id="main" role="navigation">
             <?php 
             wp_nav_menu( array( 'theme_location' => 'header-menu', 'sub_menu' => true, 'menu_class' => 'menu-header', 'depth' => 2, ) );                

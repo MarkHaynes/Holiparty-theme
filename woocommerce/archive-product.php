@@ -44,7 +44,7 @@ get_header( 'shop' ); ?>
 				 */
 				do_action( 'woocommerce_before_shop_loop' );
 			?>
-
+			
 			<?php woocommerce_product_loop_start(); ?>
 
 				<?php woocommerce_product_subcategories(); ?>
@@ -56,7 +56,7 @@ get_header( 'shop' ); ?>
 				<?php endwhile; // end of the loop. ?>
 
 			<?php woocommerce_product_loop_end(); ?>
-
+			
 			<?php
 				/**
 				 * woocommerce_after_shop_loop hook

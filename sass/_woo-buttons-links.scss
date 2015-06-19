@@ -1,0 +1,39 @@
+.woocommerce .woocommerce-error .button, .woocommerce .woocommerce-info .button, .woocommerce .woocommerce-message .button {
+	background-color: $colour-pink;
+	color: #fff;
+}
+.woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, 
+.woocommerce .cart .button, .woocommerce .cart input.button,
+.woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
+	background-color: $colour-pink;
+	border-radius: 0px;
+	color: #fff !important;
+	font-family: "Open Sans";
+	font-weight: 400;
+}
+
+.woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
+.woocommerce ul.products li.product .button:hover {
+	background-color: darken($colour-pink, 10%);
+	color: #fff;
+}
+
+nav.woocommerce-breadcrumb {
+		font-size: 18px;
+		font-size: 1.8rem;
+
+	a:link, a:visited {
+		color: $colour-pink;
+		font-size: 18px;
+		font-size: 1.8rem;
+	}
+}
+
+.woocommerce .woocommerce-breadcrumb {
+  margin: 0 0 1em;
+  padding: 0;
+  font-size: 18px;
+  font-size: 1.8rem;
+  color: #777;
+}
+

@@ -1,0 +1,130 @@
+/* ---------------------------------------------
+SHOP PAGE
+-----------------------------------------------*/
+.woocommerce ul.products li.product, .woocommerce-page ul.products li.product {
+	background-color: #333333;
+	display: inline-block;
+	float: none;
+	margin: 0 2% 2.992em 0;
+	padding: 0;
+	position: relative;
+	width: 22.05%;
+
+	a.added_to_cart:link, a.added_to_cart:visited {
+		background-color: $colour-green;
+		color: #fff;  
+		padding: 5px 0;
+		text-align: center;
+		width: 100%;
+	}
+
+	
+	a.added_to_cart:hover {
+		background-color: darken($colour-green,10%);
+	}
+
+
+	@media screen and (min-width: 951px) and (max-width:1200px) {
+		display: inline-block;
+		float: none;
+		margin: 0 2.8% 2.992em 0;
+		padding: 0;
+		position: relative;
+		width: 30.00%;
+	}
+
+	@media screen and (min-width: 650px) and (max-width:950px) {
+		display: inline-block;
+		float: none;
+		margin: 0 2.8% 2.992em 0;
+		padding: 0;
+		position: relative;
+		width: 46.50%;
+	}
+
+	@media screen and (max-width: 649px) {
+		display: inline-block;
+		float: none;
+		margin: 0 0 2.992em 0;
+		padding: 0;
+		position: relative;
+		width: 100%;
+	}
+}
+
+.woocommerce ul.products li.product a img {
+	margin: 0px;
+}
+
+.woocommerce ul.products li.product h3 {
+	color: #fff;
+	padding: 10px 2%;
+	width: 96%;
+}
+
+.woocommerce ul.products li.product .star-rating {
+	display: none;
+}
+
+.woocommerce ul.products li.product .price {
+	background-color: #666666;
+	color: #ffffff;
+	margin: 0px;
+	padding: 10px 0;
+	text-align: center;
+}
+
+.woocommerce ul.products li.product .button {
+	background-color: $colour-pink;
+	border-radius: 0px;
+	color: #ffffff;
+	margin: 0px;
+	padding: 10px 0;
+	text-align: center;
+	width: 100%;
+}
+
+.woocommerce ul.products li.product .onsale {
+	margin: 0px;
+    top: 0;  
+    left: 0px;
+    right: auto;
+}
+
+p.woocommerce-result-count {
+	display: none;
+}
+
+.woocommerce table.shop_attributes {
+	border: 0px;
+
+	tr, th, td {
+		border: 0px;
+	}
+	td {
+		padding: 0 10px;
+	}
+}
+
+/*-------------------------------------------------
+RELATED ITEMS
+-------------------------------------------------*/
+
+.woocommerce .related ul li.product, .woocommerce .related ul.products li.product,
+.woocommerce-page .related ul li.product, .woocommerce-page .related ul.products li.product,
+.woocommerce .upsells.products ul li.product, .woocommerce .upsells.products ul.products li.product,
+.woocommerce-page .upsells.products ul li.product, .woocommerce-page .upsells.products ul.products li.product {
+	width: 22.05%;
+
+	@media screen and (min-width: 951px) and (max-width:1200px) {
+		width: 30.00%;
+	}
+
+	@media screen and (min-width: 650px) and (max-width:950px) {
+		width: 46.50%;
+	}
+
+	@media screen and (max-width: 649px) {
+		width: 100%;
+	}
+}

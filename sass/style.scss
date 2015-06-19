@@ -4,7 +4,7 @@ Theme URI: http://pixellocker.co.uk/holiiparty
 Description: The Holi Party Bespoke Wordpress Theme. Including Woocommerce integration.
 Author: Pixel Locker
 Author URI: http://pixellocker.co.uk
-Version: Leaf - V0.1
+Version: Powder - V1.01
 
 */
 @import "compass";
@@ -31,7 +31,11 @@ Version: Leaf - V0.1
 @import "_wordpresscore.scss";
 @import "_slider.scss";
 
+//@import "_woo-core.scss";
+@import "_woo-products.scss";
 @import "_woocommerce.scss";
 @import "_woo-basket.scss";
+@import "_woo-messages.scss";
+@import "_woo-buttons-links.scss";
 
 @import "ie.scss";
