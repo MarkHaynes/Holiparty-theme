@@ -37,7 +37,7 @@
 		<section class="shop-button-wrap">
 			<div class="inner-wrapper">
 				<span class="shop-button"><a class="box-link green-link" href="http://www.amazon.co.uk/s/ref=bl_dp_s_web_468292?ie=UTF8&field-keywords=HoliParty&index=toys-uk&search-type=ss" title="Visit Our Shop on Amazon">Shop Online on Amazon</a></span><!--
-			 --><span class="shop-button"><a class="box-link blue-link" href="http://www.ebay.co.uk/itm/Holi-Coloured-Throwing-Powder-UK-BEST-PRICE-100g-Bags-6-Colours-Made-in-UK-/271874299382?pt=LH_DefaultDomain_3&var=&hash=item3f4cf895f6" title="Visit Our Shop on Ebay">Shop Online on Ebay</a></span>
+			 --><span class="shop-button"><a class="box-link blue-link" href="http://www.ebay.co.uk/itm/Holi-Coloured-Throwing-Powder-UK-BEST-PRICE-100g-Bags-6-Colours-Made-in-UK-/271905000093" title="Visit Our Shop on Ebay">Shop Online on Ebay</a></span>
 			</div>
 		</section>
 	

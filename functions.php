@@ -20,6 +20,12 @@ function custom_styles() {
   wp_register_script( 'jssporslider', get_template_directory_uri() . '/scripts/jssor.slider.mini.js', array( 'jquery' ) );
   wp_enqueue_script( 'jssporslider' );
 
+  wp_enqueue_script( 'fancybox', get_template_directory_uri() . '/lightbox/js/jquery.fancybox.pack.js', array( 'jquery' ), false, true );
+  
+  wp_enqueue_script( 'lightbox', get_template_directory_uri() . '/lightbox/js/lightbox.js', array( 'fancybox' ), false, true );
+  
+  wp_enqueue_style( 'lightbox-style', get_template_directory_uri() . '/lightbox/css/jquery.fancybox.css' );
+
 }
 
 // Register jQuery if not admin.
@@ -60,8 +66,7 @@ function register_my_menus() {
   register_nav_menus(
     array(
       'header-menu' => __( 'Header Menu' ),
-      'mobile-menu' => __( 'Mobile Menu' ),
-      'footer-menu' => __( 'Footer Menu' )
+      'mobile-menu' => __( 'Mobile Menu' )
     )
   ); 
 }
