@@ -30,6 +30,99 @@ remove_action( 'woocommerce_single_product_summary', 'woocommerce_template_singl
 add_action( 'woocommerce_single_product_summary', 'woocommerce_template_single_excerpt', 10 );
 
 
+// Breadcrumbs Home button 
+add_filter( 'woocommerce_breadcrumb_home_url', 'woo_custom_breadrumb_home_url' );
+function woo_custom_breadrumb_home_url() {
+    return '/shop';
+}
+
+add_filter( 'woocommerce_breadcrumb_defaults', 'jk_change_breadcrumb_home_text' );
+function jk_change_breadcrumb_home_text( $defaults ) {
+    // Change the breadcrumb home text from 'Home' to 'Shop'
+    $defaults['home'] = 'Shop';
+    return $defaults;
+}
+
+//Woo Ajax add to cart
+
+add_filter( 'woocommerce_add_to_cart_fragments', 'woocommerce_header_add_to_cart_fragment' );
+
+function woocommerce_header_add_to_cart_fragment( $fragments ) {
+  ob_start();
+  ?>
+  <a class="cart-contents no-link" href="<?php echo WC()->cart->get_cart_url(); ?>" title="<?php _e( 'View your shopping cart' ); ?>"><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a> 
+  <?php
+  
+  $fragments['a.cart-contents'] = ob_get_clean();
+  
+  return $fragments;
+}
+
+//Woo Checkout Remove required field from Telephone & Change placeholder text
+
+add_filter( 'woocommerce_checkout_fields' , 'custom_override_checkout_fields' );
+
+function custom_override_checkout_fields( $fields ) {
+     $fields['billing']['billing_phone']['required'] = false;
+     $fields['order']['order_comments']['placeholder'] = 'Enter special requirements such as specific themed colours like red and green for Halloween.';
+     return $fields;
+}
+
+//Woo extra products
+
+add_action('woocommerce_add_to_cart', 'holi_upsells', 1); 
+
+function holi_upsells() {
+  global $woocommerce;
+  $id = (int)$_POST["add-to-cart"];
+  $product = new WC_Product($id);
+    $upsells = $product->get_upsells();
+    if (!$upsells) {
+      return;
+    }
+    else {
+      $go = 1;
+      return $go;
+    }
+     
+}
+
+add_action('woocommerce_before_single_product2', 'go', 1);
+
+function go($go) {
+  if (isset($go)) {
+    if ($go == 1) {
+      echo "It Works";
+    }
+    else {
+      echo "nope";
+    }
+  }
+  else {
+    echo "Is not set";
+  }
+} 
+
+function upseller($prodID) {
+  echo "Hello World"; 
+  return;
+}
+
+//Woo remove add to cart on list pages
+
+
+
+remove_action( 'woocommerce_after_shop_loop_item', 'woocommerce_template_loop_add_to_cart', 10 );
+add_action( 'woocommerce_after_shop_loop_item', 'my_woocommerce_template_loop_add_to_cart', 10 );
+
+function my_woocommerce_template_loop_add_to_cart() {
+    global $product;
+    echo '<form action="' . esc_url( $product->get_permalink( $product->id ) ) . '" method="get">
+            <button type="submit" class="single_add_to_cart_button button alt">' . __('View Product', 'woocommerce') . '</button>
+          </form>';
+}
+
+//Custom Styles
 
 function custom_styles() {
 
@@ -86,6 +179,16 @@ if ( function_exists( 'add_theme_support' ) ) {
   add_image_size( 'single-post', 1340, 500, array( 'center', 'center' ) ); 
 }
 
+function list_products_cart() {
+  foreach($cartitems as $cartitem => $values) {
+                 $_product = $values['data']->post;
+                 $items .= $_product->post_title;
+                 $_amount = $values['quantity'];
+                 $items .= " - x" . $_amount;
+                 $items .= "<br>";  
+  } 
+}
+
 //Nav basket addition
 function modify_nav_menu_items( $items, $args ) {
 
@@ -106,74 +209,48 @@ function modify_nav_menu_items( $items, $args ) {
 
     $templateurl = get_bloginfo('template_url');
     if ($args->theme_location == 'header-menu') {
-      if($qty>1) {
+      
         $items .= '
-        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
+        <li id="nav-cyan nav-account" class="nav-cyan nav-account"><a href="/my-account"><img src="' .get_template_directory_uri().'/images/account.png"></a>
+            <ul class="navigation-account">
+
+            <div class="nav-account-image">
+            <img class="large-account" src="' .get_template_directory_uri().'/images/bigaccount.png">
+          </div>';
+                
+            if ( is_user_logged_in() ) { 
+              $current_user = wp_get_current_user();
+              $items .='<li class="welcome"><p>Hello ' . $current_user->user_firstname . ' </p></li>';
+              $items .='<li class="view-account no-underline"><a class="nav-view-account" href="/my-account" title="View My Account"> View My Account</a></li>';
+            }
+            else {
+              $items .='<li class="welcome"><p>Welcome to Holi Party!</p></li>';
+              $items .='<li class="view-account no-underline"><a class="nav-view-account" href="/my-account" title="View My Account"> Login</a></li>';
+            }
+
+
+            $items .= '<div style="clear:both"></div></ul>
+        </li>
+        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/cart"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
 
         <ul class="navigation-basket">
           <div class="nav-basket-image">
-            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
+            <img class="large-basket" src="' .get_template_directory_uri().'/images/bigbasket.png">
           </div>
-          <li class="nav-blue-basket">';
+          <li class="nav-blue-basket no-link">';
 
-          foreach($cartitems as $cartitem => $values) {
-
-                 $_product = $values['data']->post;
-                 $items .= $_product->post_title;
-                 $_amount = $values['quantity'];
-                 $items .= " - x" . $_amount;
-                 $items .= "<br>";  
-           } 
-        $items .= '</li>
-          <li class="nav-blue-basket">'.$qty.' products | '.$total.'</li>
-          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
+      $items .="<a class='cart-contents no-link' href='<?php echo WC()->cart->get_cart_url(); ?>' title='<?php _e( 'View your shopping cart' ); ?>'><?php echo sprintf (_n( '%d item', '%d items', WC()->cart->cart_contents_count ), WC()->cart->cart_contents_count ); ?> - <?php echo WC()->cart->get_cart_total(); ?></a>";
+          
+      $items .= '</li>
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/cart">View Basket</a></li>
           <div style="clear:both"></div>
         </ul>
         ';
-      }
-
-      elseif($qty==1){
-        $items .= '
-        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
-
-        <ul class="navigation-basket">
-          <div class="nav-basket-image">
-            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
-          </div>
-          <li class="nav-blue-basket">';
-
-          foreach($cartitems as $cartitem => $values) {
-
-                 $_product = $values['data']->post;
-                 $items .= $_product->post_title;
-                 $_amount = $values['quantity'];
-                 $items .= " - x" . $_amount;
-                 $items .= "<br>";  
-           } 
-        $items .= '</li>
-          <li class="nav-blue-basket">'.$qty.' product | '.$total.'</li>
-          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
-          <div style="clear:both"></div>
-        </ul>
-        ';
-      }
-      else {
-         $items .= '
-        <li id="nav-blue-basket nav-basket" class="nav-blue-basket nav-basket"><a href="/basket/"><img src="' .get_template_directory_uri().'/images/basket.png"></a>
-
-        <ul class="navigation-basket">
-          <div class="nav-basket-image">
-            <img class="large-basket" src="' .get_template_directory_uri().'/images/basket-large.png">
-          </div>
-          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/shop/">View our Shop</a></li>
-          <div style="clear:both"></div>
-        </ul>
-        ';
-      }
     }
     if ($args->theme_location == 'mobile-menu') {
       $items .= '
-          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/basket/">View Basket</a></li>
+      <li id="nav-cyan nav-account" class="nav-cyan nav-account"><a href="/my-account"><img src="' .get_template_directory_uri().'/images/account.png"></a></li>
+          <li class="nav-blue-basket no-underline view-basket"><a class="view-basket" href="/cart">View Basket</a></li>
         ';
     }
 
@@ -207,7 +284,6 @@ function baw_hack_wp_title_for_home( $title )
   }
   return $title;
 }
-
 // holi login logo
 function holi_login_logo() { 
   $template = get_template_directory_uri();
@@ -225,6 +301,19 @@ function holi_login_logo() {
 <?php }
 add_action( 'login_enqueue_scripts', 'holi_login_logo' );
 
+//Holi Login
+    // changing the login page URL
+function put_my_url(){
+  return ('http://www.holiparty.co.uk/'); // putting my URL in place of the WordPress one
+}
+add_filter('login_headerurl', 'put_my_url');
+
+// changing the login page URL hover text
+function put_my_title(){
+  return ('Holi Party'); // changing the title from "Powered by WordPress" to whatever you wish
+}
+add_filter('login_headertitle', 'put_my_title');
+
 //Holi Admin
 
 function holi_admin_theme_style() {
@@ -236,7 +325,7 @@ add_action('admin_enqueue_scripts', 'holi_admin_theme_style');
 add_action('login_enqueue_scripts', 'holi_admin_theme_style');
 add_action( 'wp_enqueue_scripts', 'holi_admin_theme_style' );
 
-add_filter('update_footer', 'right_admin_footer_text_output', 11); //right side
+add_filter('update_footer', 'right_admin_footer_text_output', 50); //right side
 function right_admin_footer_text_output($text) {
     $text = '<p>Website Design and Development by <a href="http://pixellocker.co.uk" title="Pixel Locker"> Pixel Locker.</a></p>';
     return $text;
@@ -284,5 +373,7 @@ function pixel_locker_info_widget_function() {
   echo "Pixel Locker is happy to help you with your website or web hosting*<br>";
   echo '<a href="http://pixellocker.co.uk/contact/"> Pixel Locker Support</a>';
 }
+
+// Options Page
 
 ?>

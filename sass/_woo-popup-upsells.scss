@@ -1,0 +1,273 @@
+#popupupsells {
+	background-color: darken($colour-bottom-grey, 5%);
+	position: absolute;
+	width: 80%;
+	left: 10%;
+	top: -100px;
+	z-index: 1000;
+	overflow-y: scroll;
+
+	@media screen and (max-width: 900px) {
+		right: 5%; 
+		left: 5%;
+		width: 90%;
+	}
+
+	h1 {
+		color: #fff;
+		margin: 20px 0px;
+		padding: 0 5%;
+		width: 90%;
+	}
+}
+
+ul.upsell-products {
+	margin: 20px 0;
+	padding: 0 5%;
+	width: 90%;
+
+	li {
+		background-color: $colour-bottom-grey;
+		display: inline-block;
+		margin-bottom: 20px;
+		width: 24.5%;
+
+		@media screen and (min-width: 901px) and (max-width: 1080px) {
+			width: 24.4%;
+		}
+
+		@media screen and (max-width: 900px) {
+			margin-bottom: 5px;
+			width: 100%;
+		}
+
+
+		img {
+			@media screen and (max-width: 900px) {
+				display: inline-block;
+				width: 20%;
+			}
+		}
+
+		a:link, a:visited {
+			text-decoration: none;
+			color: #fff;
+		}
+
+		h3 {
+			color: #fff;
+			font-size: 16px;
+			font-size: 1.6rem;
+			text-align: center;
+			text-decoration: none;
+
+			@media screen and (min-width: 901px) and (max-width: 1040px) {
+				font-family: 'Open Sans';
+				font-size: 14px;
+				font-size: 1.4rem;
+			}
+
+			@media screen and (max-width: 900px) {
+				display: inline-block;
+				padding: 10px 0%;
+				width: 73%;
+				vertical-align: middle;
+
+				font-family: 'Open Sans';
+				font-size: 18px;
+				font-size: 1.8rem;
+			}
+				
+		}
+
+		span.onsale {
+			display: none;
+		}
+
+		span.price {
+			background-color: #666666;
+			color: #fff;
+			display: block;
+			font-size: 16px;
+			font-size: 1.6rem;
+			padding: 5px 0;
+			text-align: center;
+			width: 100%;
+
+			@media screen and (min-width: 801px) and (max-width: 1040px) {
+				font-family: 'Open Sans';
+				font-size: 16px;
+				font-size: 1.6rem;
+				font-weight: bold;
+				padding: 10px 5%;
+				width: 90%;
+			}	
+
+			@media screen and (max-width: 800px) {
+				font-family: 'Open Sans';
+				font-size: 14px;
+				font-size: 1.4rem;
+				font-weight: bold;
+				padding: 3px 5%;
+				width: 90%;
+
+			}		
+		}
+
+		a.add_to_cart_button {
+			display: block;
+			font-size: 16px;
+			font-size: 1.6rem;
+			padding: 10px 5%;
+			text-align: center;
+			width: 90%;
+			@media screen and (min-width: 801px) and (max-width: 1040px) {
+				font-family: 'Open Sans';
+				font-size: 16px;
+				font-size: 1.6rem;
+				font-weight: bold;
+			}	
+			@media screen and (max-width: 800px) {
+				font-family: 'Open Sans';
+				font-size: 14px;
+				font-size: 1.4rem;
+				font-weight: bold;
+				padding: 5px 5%;
+				width: 90%;
+
+			}	
+		}
+
+		a.added_to_cart {
+			background-color: $colour-green;
+			display: block;
+			font-size: 16px;
+			font-size: 1.6rem;
+			padding: 8px 5%;
+			text-align: center;
+			width: 90%;	
+			@media screen and (min-width: 801px) and (max-width: 1040px) {
+				font-family: 'Open Sans';
+				font-size: 16px;
+				font-size: 1.6rem;
+			}
+			@media screen and (max-width: 800px) {
+				font-family: 'Open Sans';
+				font-size: 14px;
+				font-size: 1.4rem;
+				padding: 3px 5%;
+				width: 90%;
+
+			}						
+		}
+
+		form {
+			margin: 0px;
+			padding: 0px;
+			button.single_add_to_cart_button {
+				display: block;
+				font-size: 16px;
+				font-size: 1.6rem;
+				padding: 10px 0%;
+				text-align: center;
+				width: 100%;
+				margin: 0px;
+				@media screen and (min-width: 801px) and (max-width: 1040px) {
+					font-family: 'Open Sans';
+					font-size: 16px;
+					font-size: 1.6rem;
+				}	
+				@media screen and (max-width: 800px) {
+					font-family: 'Open Sans';
+					font-size: 14px;
+					font-size: 1.4rem;
+					padding: 5px 0%;
+					width: 100%;
+
+				}
+			}
+		}
+
+	}
+}
+
+a#close-upsells:link, a#close-upsells:visited {
+	background-color: $colour-pink;
+	color: #fff;
+	display: inline-block;
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 10px 5%;
+	text-align: center;
+	text-decoration: none;
+	width: 40%;
+	@media screen and (max-width: 490px) { 
+		width: 90%;
+	}
+}
+a#close-upsells:hover {
+	background-color: darken($colour-pink, 10%);
+}
+
+a#checkout-upsells:link, a#checkout-upsells:visited {
+	background-color: $colour-blue;
+	color: #fff;
+	display: inline-block;
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 10px 5%;
+	text-align: center;
+	text-decoration: none;
+	width: 40%;
+	@media screen and (max-width: 490px) { 
+		width: 90%;
+	}
+}
+a#checkout-upsells:hover {
+	background-color: darken($colour-blue, 10%);
+}
+
+
+#mask {
+	display: none;
+ position:fixed;
+    display:none; 
+
+    /* color with alpha channel */
+    background-color: rgba(0, 0, 0, 0.7); /* 0.7 = 70% opacity */
+
+    /* stretch to screen edges */
+    top: 0;
+    left: 0;
+    bottom: 0;
+    right: 0;
+  	z-index: 500;
+}
+
+.upsell-message {
+	background-color: #111111 !important;
+	color: #fff !important;
+	font-size: 18px;
+	font-size: 1.8rem;
+	padding: 1em 2em 1em 3.5em !important;
+	position: relative;
+	border-top: 3px solid #f06881;
+	list-style: none !important;
+	width: auto;
+}
+
+.upsell-message:before {
+	font-family: WooCommerce;
+	content: "\e015";
+	display: inline-block;
+	position: absolute;
+	top: 1em;
+	left: 1.5em;
+	color: $colour-pink;
+}
+
+.upsell-message:after {
+	content: " ";
+  	display: table;
+  	clear: both;
+}

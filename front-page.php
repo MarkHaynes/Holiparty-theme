@@ -5,38 +5,32 @@
 	<section id="top-wrap">
 		<?php get_template_part('slider'); ?>
 	</section><!--
-		--><section id="promo-bar">
-		<div class="inner-wrapper">
-			<div class="promo-info-wide">
-				<span>We supply coloured throwing powder, also known as 'Holi' or 'Gulal' powder, in convenient packages.</span>
-			</div>
-
-			<div class="promo-image">
-				<img src="<?php bloginfo('template_url'); ?>/images/promo/bagicon.png">
-			</div>
-			<div class="promo-cell"> 
-				<span>Ready to throw 100g Bags.</span>
-			</div>
-
-			<div class="promo-image">
-				<img src="<?php bloginfo('template_url'); ?>/images/promo/bundleicon.png">
-			</div>
-			<div class="promo-cell">
-				<span>Multicoloured Party Bundles</span>
-			</div>
-			<div class="promo-image">
-				<img src="<?php bloginfo('template_url'); ?>/images/promo/largebundleicon.png">
-			</div>
-			<div class="promo-cell">
-				<span>Event and Festival Bundles.</span>
-			</div>
-		</div>
-	</section>
-
-	
+		--><?php get_template_part('promo-bar'); ?>
 		<section class="shop-button-wrap">
 			<div class="inner-wrapper">
-				<span class="shop-button"><a class="box-link green-link" href="http://www.amazon.co.uk/s/ref=bl_dp_s_web_468292?ie=UTF8&field-keywords=HoliParty&index=toys-uk&search-type=ss" title="Visit Our Shop on Amazon">Shop Online on Amazon</a></span><!--
+			<h1 class="header-shop"> Featured Products </h1>
+			<ul class="products">
+				<?php
+					$args = array(
+						'post_type' => 'product',
+						'posts_per_page' => 4,
+						'meta_key' => '_featured',  
+    					'meta_value' => 'yes', 
+						'orderby' => 'rand',
+						);
+					$loop = new WP_Query( $args );
+					if ( $loop->have_posts() ) {
+						while ( $loop->have_posts() ) : $loop->the_post();
+							wc_get_template_part( 'content', 'product' );
+						endwhile;
+					} else {
+						echo __( 'No products found' );
+					}
+					wp_reset_postdata();
+				?>
+			</ul>
+			<span class="shop-button"><a class="box-link pink-link" href="/shop" title="Visit Our Shop">Shop Online with US</a></span><!--
+			--><span class="shop-button"><a class="box-link green-link" href="http://www.amazon.co.uk/s/ref=bl_dp_s_web_468292?ie=UTF8&field-keywords=HoliParty&index=toys-uk&search-type=ss" title="Visit Our Shop on Amazon">Shop Online on Amazon</a></span><!--
 			 --><span class="shop-button"><a class="box-link blue-link" href="http://www.ebay.co.uk/itm/Holi-Coloured-Throwing-Powder-UK-BEST-PRICE-100g-Bags-6-Colours-Made-in-UK-/271874299382?pt=LH_DefaultDomain_3&var=&hash=item3f4cf895f6" title="Visit Our Shop on Ebay">Shop Online on Ebay</a></span>
 			</div>
 		</section>

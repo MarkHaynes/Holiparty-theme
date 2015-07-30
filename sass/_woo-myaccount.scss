@@ -1,0 +1,60 @@
+body.woocommerce-account {
+	h1 {
+		color: $colour-cyan;
+	}
+
+	.woocommerce {
+		input[type="submit"],  button, {
+			background-color: $colour-cyan;
+		}
+
+		input[type="submit"]:hover, button:hover {
+			background-color: darken($colour-cyan, 10%);
+		}
+	}
+
+	a.button:link, a.button:visited {
+		background-color: $colour-cyan;
+	}
+	a.button:hover {
+		background-color: darken($colour-cyan,10%);
+	}
+}
+
+.woocommerce table.my_account_orders {
+	border: 0px;
+
+	@media (max-width: 780px) {
+		border: 1px solid #aaa;
+		tbody {
+			width: 100% !important;
+		    display: block;
+		    text-align: center !important;
+		}
+
+		tr {
+			border: 0px !important;
+		}
+
+		td {
+			border-bottom: 1px solid #ddd;
+			border-left: 0px;
+			border-right: 0px;
+			border-top: 0px;
+		}
+
+		td.order-actions {
+			border-bottom: 0px; 
+		}
+
+		td.order-status {
+			text-align: center !important;
+		}
+
+		a {
+			margin: 0 auto;
+		 	display: block;
+		 	text-align: center;
+		}
+	}
+}

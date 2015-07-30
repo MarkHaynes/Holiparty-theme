@@ -25,6 +25,7 @@ if (UA.indexOf("IEMobile") === -1) {
 </head>
 
 <body <?php body_class(); ?>>
+<div id="mask"></div>
 
 <nav id="mobile" role="navigation">
     <?php wp_nav_menu( array( 'theme_location' => 'mobile-menu', 'menu_class' => 'menu-mobile' ) ); ?>
@@ -32,7 +33,7 @@ if (UA.indexOf("IEMobile") === -1) {
 
 <header id="header-main" role="banner">
 	<div class="inner-wrapper group">
-		<a href="http://holiparty.co.uk" title="HoliParty">
+		<a href="<?php echo esc_url( home_url( '/' ) ); ?>" title="HoliParty">
 			<img class="header-holi-logo" src="<?php bloginfo('template_url'); ?>/images/logo/holi-logo-header.png" alt="Holi Party Logo">
 		</a>
 
@@ -42,14 +43,9 @@ if (UA.indexOf("IEMobile") === -1) {
 
 		<nav id="main" role="navigation">
             <?php 
-            wp_nav_menu( array( 'theme_location' => 'header-menu', 'sub_menu' => true, 'menu_class' => 'menu-header', 'depth' => 2, ) );                
-            $parent = $post->post_parent;
-            if ($parent != 0) {
-                echo '<ul class="fixed-sub-menu">';
-                wp_list_pages( array('child_of' => $parent, 'title_li' => __(''),));
-                echo "</ul>";
-            }
+            wp_nav_menu( array( 'theme_location' => 'header-menu', 'sub_menu' => true, 'menu_class' => 'menu-header', 'depth' => 2, ) );              
             ?>
+
         </nav>
 	</div>
 </header>

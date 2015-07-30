@@ -94,14 +94,31 @@
         <!-- Slides Container -->
         <div u="slides" style="cursor: move; position: absolute; left: 0px; top: 0px; width: 1300px;
             height: 500px; overflow: hidden;">
+            <?php $options = get_option( 'holi_option_name' ); ?>
+
             <div>
-                <img u="image" src="<?php bloginfo('template_url'); ?>/images/slider-images/holi-slider1.jpg" />   
+                <img u="image" src="<?php             if (!empty($options['slider_url_1'])) {
+                echo $options['slider_url_1'];
+            }
+            else {
+                echo 'http://holiparty.co.uk/wp-content/themes/Holi/images/slider-images/holi-slider1.jpg';
+            }?>" />   
             </div>
             <div>
-                <img u="image" src="<?php bloginfo('template_url'); ?>/images/slider-images/holi-slider2.jpg" />          
+                <img u="image" src="<?php             if (!empty($options['slider_url_2'])) {
+                echo $options['slider_url_2'];
+            }
+            else {
+                echo 'http://holiparty.co.uk/wp-content/themes/Holi/images/slider-images/holi-slider2.jpg';
+            }?>" />         
             </div>
             <div>
-                <img u="image" src="<?php bloginfo('template_url'); ?>/images/slider-images/holi-slider3.jpg" />
+                <img u="image" src="<?php             if (!empty($options['slider_url_3'])) {
+                echo $options['slider_url_3'];
+            }
+            else {
+                echo 'http://holiparty.co.uk/wp-content/themes/Holi/images/slider-images/holi-slider3.jpg';
+            }?>" />
             </div>
         </div>
                 
@@ -180,6 +197,5 @@
         <span u="arrowright" class="jssora21r" style="top: 123px; right: 8px;">
         </span>
         <!--#endregion Arrow Navigator Skin End -->
-        <a style="display: none" href="http://www.jssor.com">Image Slider</a>
     </div>
     <!-- Jssor Slider End -->

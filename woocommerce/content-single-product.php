@@ -16,6 +16,7 @@ if ( ! defined( 'ABSPATH' ) ) {
 ?>
 
 <?php
+
 	/**
 	 * woocommerce_before_single_product hook
 	 *
@@ -77,3 +78,59 @@ if ( ! defined( 'ABSPATH' ) ) {
 </div><!-- #product-<?php the_ID(); ?> -->
 
 <?php do_action( 'woocommerce_after_single_product' ); ?>
+
+
+<?php
+	if (isset($_POST["add-to-cart"])) {
+		$id = (int)$_POST["add-to-cart"];
+		holi_upsells_run();
+	}
+	else {
+
+	}
+
+	function holi_upsells_run() {
+	  	$product2 = get_product( get_the_ID() );
+	  	$id = (int) $product2->id;
+	  	$product3 = new WC_Product($id);
+   	  	$upsells = $product3->get_upsells();
+
+	  	if (!$upsells) {
+	   		return;
+	  	}
+      	else {
+      		$meta_query = WC()->query->get_meta_query();
+      		$args = array(
+	         	'post_type' => 'product',
+	          	'ignore_sticky_posts' => 1,
+	         	'no_found_rows' => 1,
+	         	'posts_per_page' => 4,
+	          	'orderby' => 'rand',
+	          	'post__in' => $upsells,
+	          	'post__not_in' => array($product3->id),
+	          	'meta_query' => $meta_query,
+      		);
+
+      		$upsellproducts = new WP_Query($args);
+      
+      		if ($upsellproducts->have_posts()) { ?>
+       	 		<div id="popupupsells">
+       	 		 <div class="upsell-message">"<?php echo get_the_title( $id );?>" was successfully added to your basket.</div>
+        		 <h1>You May Also Like</h1>
+        		<ul class="upsell-products">
+        	<?php	
+        		while ( $upsellproducts->have_posts() ) {
+          			$upsellproducts->the_post();     
+          			woocommerce_get_template_part( 'content', 'product' );      
+        		}
+        		
+        		echo "</ul>";
+        		echo '<a id="close-upsells" href="'. get_permalink($id) . '" title="Continue Shopping">Continue Shopping</a>';
+        		echo '<a id="checkout-upsells" href="/cart" title="Checkout Now">Checkout Now</a>';
+        		echo '</div>';
+     		}
+    		return;
+  		}
+  	}?>
+
+

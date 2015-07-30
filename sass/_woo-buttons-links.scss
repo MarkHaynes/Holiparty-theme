@@ -2,14 +2,32 @@
 	background-color: $colour-pink;
 	color: #fff;
 }
+
 .woocommerce #respond input#submit, .woocommerce a.button, .woocommerce button.button, .woocommerce input.button, 
-.woocommerce .cart .button, .woocommerce .cart input.button,
 .woocommerce #respond input#submit.alt, .woocommerce a.button.alt, .woocommerce button.button.alt, .woocommerce input.button.alt {
 	background-color: $colour-pink;
 	border-radius: 0px;
 	color: #fff !important;
 	font-family: "Open Sans";
-	font-weight: 400;
+	font-weight: bold;
+}
+
+.woocommerce .cart .button, .woocommerce .cart input.button,
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	background-color: $colour-blue;
+	border-radius: 0px;
+	color: #fff !important;
+	font-family: "Open Sans";
+	font-weight: bold;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button {
+	font-size: 20px;
+	font-size: 2rem;
+}
+
+.woocommerce-cart .wc-proceed-to-checkout a.checkout-button:hover {
+	background-color: darken($colour-blue, 10%);
 }
 
 .woocommerce #respond input#submit:hover, .woocommerce a.button:hover, .woocommerce button.button:hover, .woocommerce input.button:hover,
@@ -30,10 +48,9 @@ nav.woocommerce-breadcrumb {
 }
 
 .woocommerce .woocommerce-breadcrumb {
-  margin: 0 0 1em;
+  margin: 0px;
   padding: 0;
   font-size: 18px;
   font-size: 1.8rem;
   color: #777;
 }
-

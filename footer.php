@@ -38,7 +38,6 @@
                     }
                 });
             });
-
         
             $( "#mobile-button" ).click(function() {
                 var value = $("#mobile-button").html();
@@ -63,6 +62,28 @@
             });
 
         </script>
+        <script>
+            document.getElementsByTagName('body')[0].className+=' woocommerce'
+        </script>
+
+        <script>
+            var element =  document.getElementById('popupupsells');
+            var url = window.location.href; 
+
+            if (typeof(element) != 'undefined' && element != null)
+            {
+              $("#mask").toggle();
+            }
+            else {
+                console.log("where you go?")
+            }
+
+            $("#close-upsells").click(function() {
+                 $("#mask").toggle();
+                 $("#popupupsells").toggle();
+            });
+        </script>
+     
 <?php wp_footer();?>
 </body>
 </html>

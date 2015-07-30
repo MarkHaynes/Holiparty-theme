@@ -35,7 +35,13 @@ Version: Powder - V1.01
 @import "_woo-products.scss";
 @import "_woocommerce.scss";
 @import "_woo-basket.scss";
+@import "_woo-checkout.scss";
 @import "_woo-messages.scss";
 @import "_woo-buttons-links.scss";
+@import "_woo-myaccount.scss";
+@import "_woo-order-confirmation.scss";
+@import "_woo-popup-upsells.scss";
+
+@import "_homepage.scss";
 
 @import "ie.scss";

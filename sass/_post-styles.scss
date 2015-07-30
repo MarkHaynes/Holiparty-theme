@@ -1,3 +1,7 @@
+.woocommerce div.product {
+	margin-top: 20px;
+}
+
 article.page-single {
 	img.featured-image {
 		padding: 20px 0 0 0;
@@ -13,42 +17,52 @@ article.page-single {
 
 	h1 {
 		display:block;
-		font-size: 4.5rem;
 		font-size: 40px;
+		font-size: 4.5rem;
 		width: 100%;
+		margin: 0px;
+
+		@media (max-width: 500px) {
+			font-size: 25px;
+			font-size: 2.5rem;
+		}
 	}
+
+
 
 	h1.top-heading {
 		display:block;
-		font-size: 5rem;
 		font-size: 50px;
+		font-size: 5rem;
 		width: 100%;
+		margin: 0px;
 	}
 
 	h2 {
 		display:block;
-		font-size: 3rem;
 		font-size: 30px;
+		font-size: 3rem;
 		width: 100%;
 	}
 
 	h3 {
 		display:block;
-		font-size: 2.5rem;
 		font-size: 25px;
+		font-size: 2.5rem;
 		width: 100%;
 	}
 
 	h4 {
 		display:block;
-		font-size: 2.2rem;
 		font-size: 22px;
+		font-size: 2.2rem;
 		width: 100%;
 	}
+
 	h5 {
 		display:block;
-		font-size: 2rem;
 		font-size: 20px;
+		font-size: 2rem;
 		width: 100%;
 	}
 

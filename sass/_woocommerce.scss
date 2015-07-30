@@ -1,8 +1,6 @@
 /*--------------------------------------------
 SINGLE PRODUCT PAGE
 ----------------------------------------------*/
-
-
 //Product Images Wrapper 
 .woocommerce #content div.product div.images, .woocommerce div.product div.images, .woocommerce-page #content div.product div.images, .woocommerce-page div.product div.images {
 	display:inline-block;
@@ -39,6 +37,15 @@ SINGLE PRODUCT PAGE
 	min-width: 20px;
 	padding: 20px;
 	top: 0px;
+
+	@media screen and (max-width: 649px) {
+		font-size: 16px;
+		font-size: 1.6rem;
+		line-height: 15px;
+		min-height: 15px;
+		min-width: 15px;
+		padding: 5px;
+	}
 }
 
 //Product Title
@@ -50,6 +57,10 @@ h1.product_title {
 .woocommerce .star-rating {
 	color: $colour-pink;
 	font-size: 2.5em;
+
+	@media screen and (max-width: 649px) {
+		display: none;
+	}
 }
 
 .woocommerce .woocommerce-product-rating {
@@ -82,6 +93,11 @@ a.woocommerce-review-link:link, a.woocommerce-review-link:visited  {
 	margin: 5px 0;
 	text-decoration: none !important;
 
+	@media (max-width: 500px) {
+		font-size: 25px;
+		font-size: 2.5rem;		
+	}
+
 }
 
 //Quantity
@@ -109,6 +125,18 @@ form.variations_form {
 
 .woocommerce div.product form.cart .variations td.label {
 	padding: 0px;
+}
+
+//Number of Stock
+
+.woocommerce div.product .stock {
+	color: $colour-pink;
+	display: none;
+}
+
+.woocommerce div.product p.stock {
+	font-size: 10px;
+  	font-size: 1.2rem;
 }
 
 
@@ -201,3 +229,11 @@ ol.commentlist {
 /*--------------------------------------------
 PRODUCTS - RELATED
 ----------------------------------------------*/
+
+/*--------------------------------------------
+PRODUCT - SORTING
+----------------------------------------------*/
+
+.orderby option[value="popularity"], .orderby option[value="rating"] { 
+   display: none;
+}

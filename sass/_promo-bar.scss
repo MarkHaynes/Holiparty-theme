@@ -83,5 +83,23 @@ section#promo-bar {
 			width: 100% !important;
 		}
 	}
+}
+
+section#shipping-bar {
+	background-color: darken($colour-pink, 10%);
+	color: #fff;
+	font-size: 20px;
+	font-size: 2rem;
+	margin: 0px;
+	padding: 5px 0;
+	text-align: center;
+
+	img {
+		height: 30px;
+	}
+
+	span {
+		margin: 5px 0;
+	}
 
 }

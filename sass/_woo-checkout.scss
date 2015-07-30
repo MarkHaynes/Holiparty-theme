@@ -1,0 +1,13 @@
+.woocommerce-checkout {
+	h1 {
+		color: $colour-blue;
+	}
+}
+
+input#place_order {
+	background-color: $colour-blue;
+}
+
+input#place_order:hover {
+	background-color: darken($colour-blue, 10%);
+}

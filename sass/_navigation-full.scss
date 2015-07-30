@@ -29,7 +29,6 @@ nav#main {
 		}
 
 		li a:hover {
-			transition: background-color 0.5s ease;
 			text-decoration: none;
 		}
 		li.nav-red {
@@ -68,14 +67,66 @@ nav#main {
 				background-color: darken($colour-blue, 10%);
 			}
 		}
-
-		li.nav-blue-basket {
-			background-color: $colour-blue-basket;
+		
+		li.nav-cyan {
+			background-color: $colour-cyan;
 			:hover {
-				background-color: darken($colour-blue-basket, 10%);
+				background-color: darken($colour-cyan, 10%);
 			}
 		}
 
+		li.nav-account {
+			text-align: center;
+			width: 50px;
+
+			a {
+				padding: 0px;
+			}
+
+			a:hover {
+				transition: none;
+			}
+		}
+
+
+		li.nav-account img {
+			margin: 0 auto;
+			width: 25px;
+		}
+
+
+		li.nav-blue-basket {
+			
+			a:link {
+				background-color: darken($colour-blue-basket, 5%);
+			}
+
+			a:hover {
+				background-color: darken($colour-blue-basket, 10%);
+				transition: none;
+			}
+		}
+
+		li.view-basket {
+			
+			a:link {
+				background-color: lighten($colour-blue-basket, 5%);
+			}
+
+			a:hover {
+				background-color: darken($colour-blue-basket, 15%);
+				transition: background-color 0.5s ease;
+			}
+		}
+
+		a.no-link:link {
+			background-color: #15598e !important;
+		}
+
+		a.no-link:hover {
+			background-color: #15598e !important;
+		}
+		
 
 		li {
 			display: inline-block;
@@ -174,7 +225,7 @@ nav#main {
 
 	}
 
-	li.nav-basket > ul {
+	li.nav-basket > ul, li.nav-account > ul {
 		display: none;
 		visibility:hidden;
 		opacity:0;
@@ -182,26 +233,21 @@ nav#main {
 	}
 
 	ul.navigation-basket {
-		background-color: darken($colour-blue-basket , 10%)!important;
-		margin: 0px 0px 0px -350px;
+		background-color: darken($colour-blue-basket , 10%);
+		margin: 0px 0px 0px -370px;
 		padding: 10px;
-		min-width: 350px;
-		max-width: 500px;
+		width: 400px;
 		display: block;
-		position: relative;
+		position: absolute;
 		z-index: 5;
 
 		-webkit-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
 		-moz-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
 		box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
 
-		:hover {
-				background-color: $colour-blue-basket !important;
-		}
-
+		
 		li {
 			font-family: 'Open Sans';
-			background-color: darken($colour-blue-basket,10%) !important;
 			border-bottom: 1px solid $colour-blue-basket;
 			color: #fff;
 			float: right;
@@ -210,14 +256,8 @@ nav#main {
 			margin: 0px;
 			padding: 10px 5%;
 			width: 50%;
-
-			:hover {
-				background-color: darken($colour-blue-basket,10%)!important;
-			}
-		}
-
-		li.nav-blue-basket:hover {
-			background-color: darken($colour-blue-basket,10%)!important;
+		
+		
 		}
 
 		li.no-underline {
@@ -225,32 +265,100 @@ nav#main {
 			border-bottom: 0px !important;
 		}
 
+		a.cart-contents, li.no-link {
+			background-color: darken($colour-blue-basket , 10%);
+			padding: 0px 5%;
+			:hover {
+				background-color: darken($colour-blue-basket , 10%);
+			}
+		}
+
+		a.cart-contents {
+			padding: 0px;
+		}
+
 		.nav-basket-image {
 			float: left;
 			width: 30%;
-
-			:hover {
-				background-color: darken($colour-blue-basket,10%)!important;
-			}
 		}
 
 		img {
 			width: 100%;
 			display: block;
 		}
+	}
+	ul.navigation-account {
+		background-color: darken($colour-cyan , 10%);
+		margin: 0px 0px 0px -370px;
+		padding: 10px;
+		width: 400px;
+		display: block;
+		position: absolute;
+		z-index: 5;
+
+		-webkit-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+		-moz-box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+		box-shadow: 4px 8px 5px 0px rgba(0,0,0,0.26);
+
 		
-		a.view-basket:hover {
-			background-color: $colour-blue-basket !important;
+		li {
+			font-family: 'Open Sans';
+			border-bottom: 1px solid $colour-cyan;
+			color: #fff;
+			float: right;
+			font-size: 16px;
+			font-size: 1.6rem;
+			margin: 0px;
+			padding: 5px 5%;
+			width: 50%;
+		
+		
+		}
+
+		li.welcome {
+			padding-bottom: 0px;
+			padding-top: 0px;
+		}
+
+		li.view-account {
+			padding-bottom: 10px;
+			padding-top: 10px;
+			a:hover {
+				background-color: darken($colour-cyan,5%);
+			}
+		}
+
+		li.no-underline {
+			font-family: 'Quicksand';
+			border-bottom: 0px !important;
+		}
+
+		a.nav-view-account:link, li.no-link {
+			background-color: lighten($colour-cyan , 2%);
+			padding: 0px 5%;
+			
+		}
+
+		
+
+		a.nav-view-account:link{
+			padding: 0px;
+		}
+
+		.nav-account-image {
+			float: left;
+			width: 30%;
+		}
+
+		img.large-account {
+			width: 100% !important;
+			display: block;
 		}
 
 	}
 
-	ul.navigation-basket:hover {
-		background-color: darken($colour-blue-basket , 10%)!important;
-	}
-
 	ul.menu-header li:hover > a{
-		background-color: darken($colour-blue-basket , 10%)!important;
+		//background-color: darken($colour-blue-basket , 10%);
 	}
 	
 
